@@ -3,11 +3,25 @@
 // in the html.
 
 $(function () {
-  function genTime(){
-   var time = dayjs().format(‘MMM DD YYYY [at] hh:mm:ss’);
-  $(‘#current-day’).text(time);
-  }
-  setInterval(genTime, 1000);
+//   function genTime(){
+//     time = dayjs().format('MMM DD YYYY [at] hh:mm:ss');
+//   $('#currentDay').text(time);
+//   }
+  
+//   setInterval(genTime, 1000);
+
+time = dayjs().format('dddd[, ]MMMM DD');
+$('#currentDay').text(time);
+
+
+
+
+
+
+
+
+
+
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
