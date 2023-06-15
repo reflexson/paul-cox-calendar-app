@@ -3,23 +3,33 @@
 // in the html.
 
 $(function () {
-//   function genTime(){
-//     time = dayjs().format('MMM DD YYYY [at] hh:mm:ss');
-//   $('#currentDay').text(time);
-//   }
-  
-//   setInterval(genTime, 1000);
 
-time = dayjs().format('dddd[, ]MMMM DD');
+
+// set currect date at the top
+var time = dayjs().format('dddd[, ]MMMM DD');
 $('#currentDay').text(time);
 
+  // set current hour number (military time) for the .each loop
+ var currentHour = Number(dayjs().format('H'));
 
+//  Gather ids that are children of allHours ID and make an array
 
-
-
-
-
-
+ divIds = $.map($('#allHours > div'), div => div.id);
+ 
+// .each loop set color of children divs. Convert string name in array 
+// to only number string, then change string to number value.
+// Use JQuery to use array name as the div name(s) to change.
+ $( divIds ).each( function( i ) {
+  if ( (Number(this.replace(/\D/g, "")) === currentHour ) ){
+    jQuery(`#${this}`).addClass('present');
+  } 
+  else if((Number(this.replace(/\D/g, "")) > currentHour )){
+    jQuery(`#${this}`).addClass('future');
+  }
+  else if((Number(this.replace(/\D/g, "")) < currentHour )){
+    jQuery(`#${this}`).addClass('past');
+  }
+ })
 
 
   // TODO: Add a listener for click events on the save button. This code should
@@ -28,7 +38,9 @@ $('#currentDay').text(time);
   // function? How can DOM traversal be used to get the "hour-x" id of the
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
-  //
+
+
+  
   // TODO: Add code to apply the past, present, or future class to each time
   // block by comparing the id to the current hour. HINTS: How can the id
   // attribute of each time-block be used to conditionally add or remove the
