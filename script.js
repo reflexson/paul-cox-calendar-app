@@ -16,7 +16,7 @@ $('#currentDay').text(time);
 
  divIds = $.map($('#allHours > div'), div => div.id);
  
-// .each loop set color of children divs. Convert string name in array 
+// .each loop to set color of children divs. Convert string name in array 
 // to only number string, then change string to number value.
 // Use JQuery to use array name as the div name(s) to change.
  $( divIds ).each( function( i ) {
@@ -38,6 +38,16 @@ $('#currentDay').text(time);
   // function? How can DOM traversal be used to get the "hour-x" id of the
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
+
+
+const timeBlocksElement = document.querySelectorAll('.time-block');
+
+$(timeBlocksElement).each(function(i){
+(this).on('click', function (){
+
+  
+  })
+})
 
 
   
