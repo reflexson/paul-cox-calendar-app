@@ -27,14 +27,13 @@ $(function () {
 var time = dayjs().format('dddd[, ]MMMM DD');
 $('#currentDay').text(time);
 
-// refresh time every 5 seconds
+// refresh time every second
 
 function rollTime(){
-  var time = dayjs().format('dddd[, ]MMMM DD');
 $('#currentDay').text(time);
 }
 
-setInterval(rollTime, 5000);
+setInterval(rollTime, 1000);
 
   // set current hour number (military time) for the .each loop
  var currentHour = Number(dayjs().format('H'));
