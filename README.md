@@ -14,7 +14,7 @@ https://reflexson.github.io/paul-cox-calendar-app/
 
 The reference code can be accessed here:
 
-https://github.com/reflexson/paul-calendar-app
+https://github.com/reflexson/paul-cox-calendar-app
 
 ## Usage
 
