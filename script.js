@@ -27,6 +27,15 @@ $(function () {
 var time = dayjs().format('dddd[, ]MMMM DD');
 $('#currentDay').text(time);
 
+// refresh time every 5 seconds
+
+function rollTime(){
+  var time = dayjs().format('dddd[, ]MMMM DD');
+$('#currentDay').text(time);
+}
+
+setInterval(rollTime, 5000);
+
   // set current hour number (military time) for the .each loop
  var currentHour = Number(dayjs().format('H'));
 
@@ -38,7 +47,7 @@ $('#currentDay').text(time);
 
  divIds = $.map($('.time-block'), div => div.id);
 
- console.log(divIds);
+
 
 
 // Vanilla Method
@@ -88,7 +97,7 @@ $(descriptionElements).each(function(){
 
 })
 
-console.log(saveButtons[1].parentElement.children[1]);
+// console.log(saveButtons[1].parentElement.children[1]);
 
 // Array.from(timeBlocksElement).forEach(function(i) {
 //   console.log(this);
