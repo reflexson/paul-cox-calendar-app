@@ -2,7 +2,7 @@
 
 ## Description
 
-This project is calendar app to schedule a work day.  When the page is opened, the current day iis displayed at the top along with hour blocks for that current day.  The current hour is displayed in red, past hours in grey, and future hours in green.  Each hour has a text area to type events and a save button to the right to store that event in memory. 
+This project is calendar app to schedule a work day.  When the page is opened, the current day is displayed at the top along with hour blocks for that current day.  The current hour is displayed in red, past hours in grey, and future hours in green.  Each hour has a text area to type events and a save button to the right to store that event in memory. 
 
 I challenged myself in ths assignment to be as efficient with my code as possible.  I researched and implimented regex and template literals to help me achive this goal.  I also used JQUERY each loops and functions along with vanilla javascript. I was also able to practice the usual git workflow to upload and host the project to github.  
 
