@@ -27,14 +27,13 @@ $(function () {
 var time = dayjs().format('dddd[, ]MMMM DD');
 $('#currentDay').text(time);
 
-// refresh time every 5 seconds
+// refresh time every second
 
 function rollTime(){
-  var time = dayjs().format('dddd[, ]MMMM DD');
 $('#currentDay').text(time);
 }
 
-setInterval(rollTime, 5000);
+setInterval(rollTime, 1000);
 
   // set current hour number (military time) for the .each loop
  var currentHour = Number(dayjs().format('H'));
@@ -46,9 +45,6 @@ setInterval(rollTime, 5000);
 // or select all class time-block and create array with the div.id of each index
 
  divIds = $.map($('.time-block'), div => div.id);
-
-
-
 
 // Vanilla Method
 // var parentdiv = document.getElementById("allHours")
@@ -77,7 +73,8 @@ setInterval(rollTime, 5000);
 
 
 
-
+// Save text area t local storage upon clicking save button.  Use parentElement.children[1].value
+// to select text area to save. Use this.parentElement.textContent to name event.
 
 const saveButtons = document.querySelectorAll('.saveBtn');
 
@@ -88,6 +85,8 @@ $( saveButtons ).each( function( i ) {
 
   })
 })
+
+// Load text areas with data saved in local storage
 
 var descriptionElements = document.querySelectorAll('.description');
 $(descriptionElements).each(function(){
